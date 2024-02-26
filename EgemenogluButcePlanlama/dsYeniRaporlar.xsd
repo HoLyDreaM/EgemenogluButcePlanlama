@@ -1,0 +1,445 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsYeniRaporlar" targetNamespace="http://tempuri.org/dsYeniRaporlar.xsd" xmlns:mstns="http://tempuri.org/dsYeniRaporlar.xsd" xmlns="http://tempuri.org/dsYeniRaporlar.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="1" FunctionsComponentName="ButceIslemleriTableAdapter" GeneratorFunctionsComponentClassName="ButceIslemleriTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" UserFunctionsComponentName="ButceIslemleriTableAdapter" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="Cs" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="Cs (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.EgemenOgluRaporlama.Properties.Settings.GlobalReference.Default.Cs" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="CsRaporlama" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="CsRaporlama (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.EgemenOgluRaporlama.Properties.Settings.GlobalReference.Default.CsRaporlama" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="tblSrmMrkzAdiTableAdapter" GeneratorDataComponentClassName="tblSrmMrkzAdiTableAdapter" Name="tblSrmMrkzAdi" UserDataComponentName="tblSrmMrkzAdiTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="Cs (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        (CASE LEFT(som_kod, 2) 
+                         WHEN '01' THEN 'ISTANBUL' WHEN '02' THEN 'BURSA' WHEN '03' THEN 'IZMIR' WHEN '04' THEN 'ADANA' WHEN '05' THEN 'ANKARA' WHEN '06' THEN 'ANTALYA'
+                          WHEN '99' THEN 'YUNUS EGEMENOGLU' WHEN '00' THEN 'ORTAK CARİ İŞLEMLERİ' WHEN '98' THEN 'MASRAF' WHEN '97' THEN 'HASAR MASRAFLARI' WHEN '11'
+                          THEN 'BİLGİ YÖNETİMİ' WHEN '12' THEN 'İDARİ İŞLER' WHEN '07' THEN 'MALİ İŞLER' END) AS som_isim
+FROM            SORUMLULUK_MERKEZLERI
+GROUP BY (CASE LEFT(som_kod, 2) 
+                         WHEN '01' THEN 'ISTANBUL' WHEN '02' THEN 'BURSA' WHEN '03' THEN 'IZMIR' WHEN '04' THEN 'ADANA' WHEN '05' THEN 'ANKARA' WHEN '06' THEN 'ANTALYA'
+                          WHEN '99' THEN 'YUNUS EGEMENOGLU' WHEN '00' THEN 'ORTAK CARİ İŞLEMLERİ' WHEN '98' THEN 'MASRAF' WHEN '97' THEN 'HASAR MASRAFLARI' WHEN '11'
+                          THEN 'BİLGİ YÖNETİMİ' WHEN '12' THEN 'İDARİ İŞLER' WHEN '07' THEN 'MALİ İŞLER' END)</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="som_isim" DataSetColumn="som_isim" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="tblSrmMrkzKoduTableAdapter" GeneratorDataComponentClassName="tblSrmMrkzKoduTableAdapter" Name="tblSrmMrkzKodu" UserDataComponentName="tblSrmMrkzKoduTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="Cs (Settings)" DbObjectName="MikroDB_V14_01.dbo.a_fn_SrmMrkzAdiBul" DbObjectType="Function" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Fill" GenerateShortCommands="false" GeneratorSourceName="Fill" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        SorumlulukMerkezi
+FROM            dbo.a_fn_SrmMrkzAdiBul(@srmmrkzadi) AS SrmMrkzAdi</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="srmmrkzadi" ColumnName="" DataSourceName="" DataTypeServer="varchar(120)" DbType="AnsiString" Direction="Input" ParameterName="@srmmrkzadi" Precision="0" Scale="0" Size="1024" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="SorumlulukMerkezi" DataSetColumn="SorumlulukMerkezi" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="tblButceTableAdapter" GeneratorDataComponentClassName="tblButceTableAdapter" Name="tblButce" UserDataComponentName="tblButceTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="CsRaporlama (Settings)" DbObjectName="EgemenogluRaporlama.dbo.Butce" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM [Butce] WHERE (([ButceID] = @Original_ButceID) AND ((@IsNull_Sorumluluk_Merkezi_Adi = 1 AND [SrmMrkAdi] IS NULL) OR ([SrmMrkAdi] = @Original_Sorumluluk_Merkezi_Adi)) AND ((@IsNull_Sorumluluk_Merkezi_Kodu = 1 AND [SrmMrkKodu] IS NULL) OR ([SrmMrkKodu] = @Original_Sorumluluk_Merkezi_Kodu)) AND ((@IsNull_Butce_Gelir = 1 AND [ButceGelir] IS NULL) OR ([ButceGelir] = @Original_Butce_Gelir)) AND ((@IsNull_Butce_Gider = 1 AND [ButceGider] IS NULL) OR ([ButceGider] = @Original_Butce_Gider)) AND ((@IsNull_Yil = 1 AND [Yil] IS NULL) OR ([Yil] = @Original_Yil)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_ButceID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ButceID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Sorumluluk_Merkezi_Adi" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Sorumluluk_Merkezi_Adi" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_Sorumluluk_Merkezi_Adi" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Sorumluluk_Merkezi_Adi" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Sorumluluk_Merkezi_Kodu" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Sorumluluk_Merkezi_Kodu" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_Sorumluluk_Merkezi_Kodu" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Sorumluluk_Merkezi_Kodu" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Butce_Gelir" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Butce_Gelir" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@Original_Butce_Gelir" Precision="18" ProviderType="Decimal" Scale="2" Size="0" SourceColumn="Butce_Gelir" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Butce_Gider" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Butce_Gider" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@Original_Butce_Gider" Precision="18" ProviderType="Decimal" Scale="2" Size="0" SourceColumn="Butce_Gider" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Yil" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Yil" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_Yil" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Yil" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [Butce] ([SrmMrkAdi], [SrmMrkKodu], [ButceGelir], [ButceGider], [Yil]) VALUES (@Sorumluluk_Merkezi_Adi, @Sorumluluk_Merkezi_Kodu, @Butce_Gelir, @Butce_Gider, @Yil);
+SELECT ButceID, SrmMrkAdi AS Sorumluluk_Merkezi_Adi, SrmMrkKodu AS Sorumluluk_Merkezi_Kodu, ButceGelir AS Butce_Gelir, ButceGider AS Butce_Gider, Yil FROM Butce WHERE (ButceID = SCOPE_IDENTITY()) ORDER BY Sorumluluk_Merkezi_Adi</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Sorumluluk_Merkezi_Adi" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Sorumluluk_Merkezi_Adi" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Sorumluluk_Merkezi_Kodu" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Sorumluluk_Merkezi_Kodu" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@Butce_Gelir" Precision="18" ProviderType="Decimal" Scale="2" Size="0" SourceColumn="Butce_Gelir" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@Butce_Gider" Precision="18" ProviderType="Decimal" Scale="2" Size="0" SourceColumn="Butce_Gider" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Yil" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Yil" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT ButceID,SrmMrkAdi AS Sorumluluk_Merkezi_Adi,SrmMrkKodu AS Sorumluluk_Merkezi_Kodu,
+ButceGelir AS Butce_Gelir,ButceGider AS Butce_Gider,Yil FROM Butce
+ORDER BY SrmMrkAdi</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE [Butce] SET [SrmMrkAdi] = @Sorumluluk_Merkezi_Adi, [SrmMrkKodu] = @Sorumluluk_Merkezi_Kodu, [ButceGelir] = @Butce_Gelir, [ButceGider] = @Butce_Gider, [Yil] = @Yil WHERE (([ButceID] = @Original_ButceID) AND ((@IsNull_Sorumluluk_Merkezi_Adi = 1 AND [SrmMrkAdi] IS NULL) OR ([SrmMrkAdi] = @Original_Sorumluluk_Merkezi_Adi)) AND ((@IsNull_Sorumluluk_Merkezi_Kodu = 1 AND [SrmMrkKodu] IS NULL) OR ([SrmMrkKodu] = @Original_Sorumluluk_Merkezi_Kodu)) AND ((@IsNull_Butce_Gelir = 1 AND [ButceGelir] IS NULL) OR ([ButceGelir] = @Original_Butce_Gelir)) AND ((@IsNull_Butce_Gider = 1 AND [ButceGider] IS NULL) OR ([ButceGider] = @Original_Butce_Gider)) AND ((@IsNull_Yil = 1 AND [Yil] IS NULL) OR ([Yil] = @Original_Yil)));
+SELECT ButceID, SrmMrkAdi AS Sorumluluk_Merkezi_Adi, SrmMrkKodu AS Sorumluluk_Merkezi_Kodu, ButceGelir AS Butce_Gelir, ButceGider AS Butce_Gider, Yil FROM Butce WHERE (ButceID = @ButceID) ORDER BY Sorumluluk_Merkezi_Adi</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Sorumluluk_Merkezi_Adi" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Sorumluluk_Merkezi_Adi" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Sorumluluk_Merkezi_Kodu" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Sorumluluk_Merkezi_Kodu" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@Butce_Gelir" Precision="18" ProviderType="Decimal" Scale="2" Size="0" SourceColumn="Butce_Gelir" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@Butce_Gider" Precision="18" ProviderType="Decimal" Scale="2" Size="0" SourceColumn="Butce_Gider" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Yil" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Yil" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_ButceID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ButceID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Sorumluluk_Merkezi_Adi" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Sorumluluk_Merkezi_Adi" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_Sorumluluk_Merkezi_Adi" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Sorumluluk_Merkezi_Adi" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Sorumluluk_Merkezi_Kodu" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Sorumluluk_Merkezi_Kodu" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_Sorumluluk_Merkezi_Kodu" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Sorumluluk_Merkezi_Kodu" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Butce_Gelir" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Butce_Gelir" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@Original_Butce_Gelir" Precision="18" ProviderType="Decimal" Scale="2" Size="0" SourceColumn="Butce_Gelir" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Butce_Gider" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Butce_Gider" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@Original_Butce_Gider" Precision="18" ProviderType="Decimal" Scale="2" Size="0" SourceColumn="Butce_Gider" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Yil" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Yil" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_Yil" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Yil" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="ButceID" ColumnName="ButceID" DataSourceName="EgemenogluRaporlama.dbo.Butce" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@ButceID" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="ButceID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ButceID" DataSetColumn="ButceID" />
+              <Mapping SourceColumn="Sorumluluk_Merkezi_Adi" DataSetColumn="Sorumluluk_Merkezi_Adi" />
+              <Mapping SourceColumn="Sorumluluk_Merkezi_Kodu" DataSetColumn="Sorumluluk_Merkezi_Kodu" />
+              <Mapping SourceColumn="Butce_Gelir" DataSetColumn="Butce_Gelir" />
+              <Mapping SourceColumn="Butce_Gider" DataSetColumn="Butce_Gider" />
+              <Mapping SourceColumn="Yil" DataSetColumn="Yil" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="CsRaporlama (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="ButceEdit" Modifier="Public" Name="ButceEdit" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="ButceEdit">
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>UPDATE Butce SET SrmMrkAdi=@SrmMrkAdi,SrmMrkKodu=@SrmMrkKodu,ButceGelir=@ButceGelir,ButceGider=@ButceGider,Yil=@Yil
+WHERE ButceID=@ButceID</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="SrmMrkAdi" ColumnName="SrmMrkAdi" DataSourceName="EgemenogluRaporlama.dbo.Butce" DataTypeServer="nvarchar(100)" DbType="String" Direction="Input" ParameterName="@SrmMrkAdi" Precision="0" ProviderType="NVarChar" Scale="0" Size="100" SourceColumn="SrmMrkAdi" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="SrmMrkKodu" ColumnName="SrmMrkKodu" DataSourceName="EgemenogluRaporlama.dbo.Butce" DataTypeServer="nvarchar(50)" DbType="String" Direction="Input" ParameterName="@SrmMrkKodu" Precision="0" ProviderType="NVarChar" Scale="0" Size="50" SourceColumn="SrmMrkKodu" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="ButceGelir" ColumnName="ButceGelir" DataSourceName="EgemenogluRaporlama.dbo.Butce" DataTypeServer="numeric(18, 2)" DbType="Decimal" Direction="Input" ParameterName="@ButceGelir" Precision="18" ProviderType="Decimal" Scale="2" Size="9" SourceColumn="ButceGelir" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="ButceGider" ColumnName="ButceGider" DataSourceName="EgemenogluRaporlama.dbo.Butce" DataTypeServer="numeric(18, 2)" DbType="Decimal" Direction="Input" ParameterName="@ButceGider" Precision="18" ProviderType="Decimal" Scale="2" Size="9" SourceColumn="ButceGider" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="Yil" ColumnName="Yil" DataSourceName="EgemenogluRaporlama.dbo.Butce" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@Yil" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="Yil" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="ButceID" ColumnName="ButceID" DataSourceName="EgemenogluRaporlama.dbo.Butce" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@ButceID" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="ButceID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+              <DbSource ConnectionRef="CsRaporlama (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="ButceEkle" Modifier="Public" Name="ButceEkle" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="ButceEkle">
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>INSERT INTO [Butce] ([SrmMrkAdi], [SrmMrkKodu], [ButceGelir], [ButceGider], [Yil]) VALUES (@Sorumluluk_Merkezi_Adi, @Sorumluluk_Merkezi_Kodu, @Butce_Gelir, @Butce_Gider, @Yil)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="Sorumluluk_Merkezi_Adi" ColumnName="SrmMrkAdi" DataSourceName="EgemenogluRaporlama.dbo.Butce" DataTypeServer="nvarchar(100)" DbType="String" Direction="Input" ParameterName="@Sorumluluk_Merkezi_Adi" Precision="0" ProviderType="NVarChar" Scale="0" Size="100" SourceColumn="SrmMrkAdi" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="Sorumluluk_Merkezi_Kodu" ColumnName="SrmMrkKodu" DataSourceName="EgemenogluRaporlama.dbo.Butce" DataTypeServer="nvarchar(50)" DbType="String" Direction="Input" ParameterName="@Sorumluluk_Merkezi_Kodu" Precision="0" ProviderType="NVarChar" Scale="0" Size="50" SourceColumn="SrmMrkKodu" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="Butce_Gelir" ColumnName="ButceGelir" DataSourceName="EgemenogluRaporlama.dbo.Butce" DataTypeServer="numeric(18, 2)" DbType="Decimal" Direction="Input" ParameterName="@Butce_Gelir" Precision="18" ProviderType="Decimal" Scale="2" Size="9" SourceColumn="ButceGelir" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="Butce_Gider" ColumnName="ButceGider" DataSourceName="EgemenogluRaporlama.dbo.Butce" DataTypeServer="numeric(18, 2)" DbType="Decimal" Direction="Input" ParameterName="@Butce_Gider" Precision="18" ProviderType="Decimal" Scale="2" Size="9" SourceColumn="ButceGider" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="Yil" ColumnName="Yil" DataSourceName="EgemenogluRaporlama.dbo.Butce" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@Yil" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="Yil" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="tblSrmMrkzleriTableAdapter" GeneratorDataComponentClassName="tblSrmMrkzleriTableAdapter" Name="tblSrmMrkzleri" UserDataComponentName="tblSrmMrkzleriTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="Cs (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        (CASE LEFT(som_kod, 2) 
+WHEN '01' THEN 'ISTANBUL'
+WHEN '02' THEN 'BURSA' 
+WHEN '03' THEN 'IZMIR' 
+WHEN '04' THEN 'ADANA' 
+WHEN '05' THEN 'ANKARA' 
+WHEN '06' THEN 'ANTALYA'
+WHEN '99' THEN 'YUNUS EGEMENOGLU' 
+WHEN '00' THEN 'ORTAK CARİ İŞLEMLERİ' 
+WHEN '98' THEN 'MASRAF' 
+WHEN '97' THEN 'HASAR MASRAFLARI'
+WHEN '11' THEN 'BİLGİ YÖNETİMİ' 
+WHEN '12' THEN 'İDARİ İŞLER' 
+WHEN '07' THEN 'MALİ İŞLER' 
+END) AS som_isim,som_isim+' { ' +som_kod+ '}' AS SomKod
+FROM SORUMLULUK_MERKEZLERI
+GROUP BY (CASE LEFT(som_kod, 2) 
+WHEN '01' THEN 'ISTANBUL'
+WHEN '02' THEN 'BURSA' 
+WHEN '03' THEN 'IZMIR' 
+WHEN '04' THEN 'ADANA' 
+WHEN '05' THEN 'ANKARA' 
+WHEN '06' THEN 'ANTALYA'
+WHEN '99' THEN 'YUNUS EGEMENOGLU' 
+WHEN '00' THEN 'ORTAK CARİ İŞLEMLERİ' 
+WHEN '98' THEN 'MASRAF' 
+WHEN '97' THEN 'HASAR MASRAFLARI'
+WHEN '11' THEN 'BİLGİ YÖNETİMİ' 
+WHEN '12' THEN 'İDARİ İŞLER' 
+WHEN '07' THEN 'MALİ İŞLER' 
+END),som_isim,som_kod
+ORDER BY som_isim ASC</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="som_isim" DataSetColumn="som_isim" />
+              <Mapping SourceColumn="SomKod" DataSetColumn="SomKod" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ButceAnalizRaporuTableAdapter" GeneratorDataComponentClassName="ButceAnalizRaporuTableAdapter" Name="ButceAnalizRaporu" UserDataComponentName="ButceAnalizRaporuTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="Cs (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="ButceRaporu" GenerateMethods="Fill" GenerateShortCommands="false" GeneratorSourceName="ButceRaporu" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="ButceRaporu">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT '' AS Bolge,'' AS SorumlulukMerkeziAdi,2013 AS Yil,12000.00 AS BelirlenenButceGelir,12000.00 AS ButcelenenGelir,
+1400.00 AS GerceklesenGelir,12000.00 AS BelirlenenButceGider,1400.00 AS ButcelenenGider,10000.00 AS GerceklesenGider,14520.00 AS ButcelenenGerceklesenGelir,
+14520.00 AS ButcelenenGerceklesenGider,2.649799 AS YuzdeGelirSapmasi,2.649799 AS YuzdeGiderSapmasi
+FROM CARI_HESAP_HAREKETLERI</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Bolge" DataSetColumn="Bolge" />
+              <Mapping SourceColumn="SorumlulukMerkeziAdi" DataSetColumn="SorumlulukMerkeziAdi" />
+              <Mapping SourceColumn="Yil" DataSetColumn="Yil" />
+              <Mapping SourceColumn="BelirlenenButceGelir" DataSetColumn="BelirlenenButceGelir" />
+              <Mapping SourceColumn="ButcelenenGelir" DataSetColumn="ButcelenenGelir" />
+              <Mapping SourceColumn="GerceklesenGelir" DataSetColumn="GerceklesenGelir" />
+              <Mapping SourceColumn="BelirlenenButceGider" DataSetColumn="BelirlenenButceGider" />
+              <Mapping SourceColumn="ButcelenenGider" DataSetColumn="ButcelenenGider" />
+              <Mapping SourceColumn="GerceklesenGider" DataSetColumn="GerceklesenGider" />
+              <Mapping SourceColumn="ButcelenenGerceklesenGelir" DataSetColumn="ButcelenenGerceklesenGelir" />
+              <Mapping SourceColumn="ButcelenenGerceklesenGider" DataSetColumn="ButcelenenGerceklesenGider" />
+              <Mapping SourceColumn="YuzdeGelirSapmasi" DataSetColumn="YuzdeGelirSapmasi" />
+              <Mapping SourceColumn="YuzdeGiderSapmasi" DataSetColumn="YuzdeGiderSapmasi" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="tblButceRaporAnaliziTableAdapter" GeneratorDataComponentClassName="tblButceRaporAnaliziTableAdapter" Name="tblButceRaporAnalizi" UserDataComponentName="tblButceRaporAnaliziTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="CsRaporlama (Settings)" DbObjectName="EgemenogluRaporlama.dbo.ButceRaporAnalizi" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Fill" GenerateShortCommands="false" GeneratorSourceName="Fill" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [ButceRaporAnalizi] ([Bolge], [ButcelenenGelir], [GerceklesenGelir], [ButcelenenGider], [GerceklesenGider]) VALUES (@Bolge, @ButcelenenGelir, @GerceklesenGelir, @ButcelenenGider, @GerceklesenGider)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Bolge" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Bolge" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@ButcelenenGelir" Precision="18" ProviderType="Decimal" Scale="2" Size="0" SourceColumn="ButcelenenGelir" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@GerceklesenGelir" Precision="18" ProviderType="Decimal" Scale="2" Size="0" SourceColumn="GerceklesenGelir" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@ButcelenenGider" Precision="18" ProviderType="Decimal" Scale="2" Size="0" SourceColumn="ButcelenenGider" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@GerceklesenGider" Precision="18" ProviderType="Decimal" Scale="2" Size="0" SourceColumn="GerceklesenGider" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        Bolge, ButcelenenGelir, GerceklesenGelir, ButcelenenGider, GerceklesenGider
+FROM            ButceRaporAnalizi</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Bolge" DataSetColumn="Bolge" />
+              <Mapping SourceColumn="ButcelenenGelir" DataSetColumn="ButcelenenGelir" />
+              <Mapping SourceColumn="GerceklesenGelir" DataSetColumn="GerceklesenGelir" />
+              <Mapping SourceColumn="ButcelenenGider" DataSetColumn="ButcelenenGider" />
+              <Mapping SourceColumn="GerceklesenGider" DataSetColumn="GerceklesenGider" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="CsRaporlama (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="ButceRaporEkle" Modifier="Public" Name="ButceRaporEkle" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="ButceRaporEkle">
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>INSERT 
+INTO            ButceRaporAnalizi(Bolge, ButcelenenGelir, GerceklesenGelir, ButcelenenGider, GerceklesenGider)
+VALUES     (@Bolge,@ButcelenenGelir,@GerceklesenGelir,@ButcelenenGider,@GerceklesenGider)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="Bolge" ColumnName="Bolge" DataSourceName="EgemenogluRaporlama.dbo.ButceRaporAnalizi" DataTypeServer="nvarchar(150)" DbType="String" Direction="Input" ParameterName="@Bolge" Precision="0" ProviderType="NVarChar" Scale="0" Size="150" SourceColumn="Bolge" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="ButcelenenGelir" ColumnName="ButcelenenGelir" DataSourceName="EgemenogluRaporlama.dbo.ButceRaporAnalizi" DataTypeServer="numeric(18, 2)" DbType="Decimal" Direction="Input" ParameterName="@ButcelenenGelir" Precision="18" ProviderType="Decimal" Scale="2" Size="9" SourceColumn="ButcelenenGelir" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="GerceklesenGelir" ColumnName="GerceklesenGelir" DataSourceName="EgemenogluRaporlama.dbo.ButceRaporAnalizi" DataTypeServer="numeric(18, 2)" DbType="Decimal" Direction="Input" ParameterName="@GerceklesenGelir" Precision="18" ProviderType="Decimal" Scale="2" Size="9" SourceColumn="GerceklesenGelir" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="ButcelenenGider" ColumnName="ButcelenenGider" DataSourceName="EgemenogluRaporlama.dbo.ButceRaporAnalizi" DataTypeServer="numeric(18, 2)" DbType="Decimal" Direction="Input" ParameterName="@ButcelenenGider" Precision="18" ProviderType="Decimal" Scale="2" Size="9" SourceColumn="ButcelenenGider" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="GerceklesenGider" ColumnName="GerceklesenGider" DataSourceName="EgemenogluRaporlama.dbo.ButceRaporAnalizi" DataTypeServer="numeric(18, 2)" DbType="Decimal" Direction="Input" ParameterName="@GerceklesenGider" Precision="18" ProviderType="Decimal" Scale="2" Size="9" SourceColumn="GerceklesenGider" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+              </DbSource>
+              <DbSource ConnectionRef="CsRaporlama (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="RaporClear" Modifier="Public" Name="RaporClear" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="RaporClear">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>TRUNCATE TABLE ButceRaporAnalizi</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+        </Tables>
+        <Sources>
+          <DbSource ConnectionRef="CsRaporlama (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="ButceSil" MethodsParameterType="CLR" Modifier="Public" Name="ButceSil" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="ButceSil">
+            <DeleteCommand>
+              <DbCommand CommandType="Text" ModifiedByUser="true">
+                <CommandText>DELETE FROM Butce WHERE ButceID=@ButceID</CommandText>
+                <Parameters>
+                  <Parameter AllowDbNull="false" AutogeneratedName="ButceID" ColumnName="ButceID" DataSourceName="EgemenogluRaporlama.dbo.Butce" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@ButceID" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="ButceID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                </Parameters>
+              </DbCommand>
+            </DeleteCommand>
+          </DbSource>
+        </Sources>
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsYeniRaporlar" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsYeniRaporlar" msprop:Generator_UserDSName="dsYeniRaporlar">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="tblSrmMrkzAdi" msprop:Generator_TableClassName="tblSrmMrkzAdiDataTable" msprop:Generator_TableVarName="tabletblSrmMrkzAdi" msprop:Generator_TablePropName="tblSrmMrkzAdi" msprop:Generator_RowDeletingName="tblSrmMrkzAdiRowDeleting" msprop:Generator_RowChangingName="tblSrmMrkzAdiRowChanging" msprop:Generator_RowEvHandlerName="tblSrmMrkzAdiRowChangeEventHandler" msprop:Generator_RowDeletedName="tblSrmMrkzAdiRowDeleted" msprop:Generator_UserTableName="tblSrmMrkzAdi" msprop:Generator_RowChangedName="tblSrmMrkzAdiRowChanged" msprop:Generator_RowEvArgName="tblSrmMrkzAdiRowChangeEvent" msprop:Generator_RowClassName="tblSrmMrkzAdiRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="som_isim" msprop:Generator_ColumnVarNameInTable="columnsom_isim" msprop:Generator_ColumnPropNameInRow="som_isim" msprop:Generator_ColumnPropNameInTable="som_isimColumn" msprop:Generator_UserColumnName="som_isim" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="tblSrmMrkzKodu" msprop:Generator_TableClassName="tblSrmMrkzKoduDataTable" msprop:Generator_TableVarName="tabletblSrmMrkzKodu" msprop:Generator_TablePropName="tblSrmMrkzKodu" msprop:Generator_RowDeletingName="tblSrmMrkzKoduRowDeleting" msprop:Generator_RowChangingName="tblSrmMrkzKoduRowChanging" msprop:Generator_RowEvHandlerName="tblSrmMrkzKoduRowChangeEventHandler" msprop:Generator_RowDeletedName="tblSrmMrkzKoduRowDeleted" msprop:Generator_UserTableName="tblSrmMrkzKodu" msprop:Generator_RowChangedName="tblSrmMrkzKoduRowChanged" msprop:Generator_RowEvArgName="tblSrmMrkzKoduRowChangeEvent" msprop:Generator_RowClassName="tblSrmMrkzKoduRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="SorumlulukMerkezi" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnSorumlulukMerkezi" msprop:Generator_ColumnPropNameInRow="SorumlulukMerkezi" msprop:Generator_ColumnPropNameInTable="SorumlulukMerkeziColumn" msprop:Generator_UserColumnName="SorumlulukMerkezi" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="67" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="tblButce" msprop:Generator_TableClassName="tblButceDataTable" msprop:Generator_TableVarName="tabletblButce" msprop:Generator_TablePropName="tblButce" msprop:Generator_RowDeletingName="tblButceRowDeleting" msprop:Generator_RowChangingName="tblButceRowChanging" msprop:Generator_RowEvHandlerName="tblButceRowChangeEventHandler" msprop:Generator_RowDeletedName="tblButceRowDeleted" msprop:Generator_UserTableName="tblButce" msprop:Generator_RowChangedName="tblButceRowChanged" msprop:Generator_RowEvArgName="tblButceRowChangeEvent" msprop:Generator_RowClassName="tblButceRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ButceID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnButceID" msprop:Generator_ColumnPropNameInRow="ButceID" msprop:Generator_ColumnPropNameInTable="ButceIDColumn" msprop:Generator_UserColumnName="ButceID" type="xs:int" />
+              <xs:element name="Sorumluluk_Merkezi_Adi" msprop:Generator_ColumnVarNameInTable="columnSorumluluk_Merkezi_Adi" msprop:Generator_ColumnPropNameInRow="Sorumluluk_Merkezi_Adi" msprop:Generator_ColumnPropNameInTable="Sorumluluk_Merkezi_AdiColumn" msprop:Generator_UserColumnName="Sorumluluk_Merkezi_Adi" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Sorumluluk_Merkezi_Kodu" msprop:Generator_ColumnVarNameInTable="columnSorumluluk_Merkezi_Kodu" msprop:Generator_ColumnPropNameInRow="Sorumluluk_Merkezi_Kodu" msprop:Generator_ColumnPropNameInTable="Sorumluluk_Merkezi_KoduColumn" msprop:Generator_UserColumnName="Sorumluluk_Merkezi_Kodu" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Butce_Gelir" msprop:Generator_ColumnVarNameInTable="columnButce_Gelir" msprop:Generator_ColumnPropNameInRow="Butce_Gelir" msprop:Generator_ColumnPropNameInTable="Butce_GelirColumn" msprop:Generator_UserColumnName="Butce_Gelir" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Butce_Gider" msprop:Generator_ColumnVarNameInTable="columnButce_Gider" msprop:Generator_ColumnPropNameInRow="Butce_Gider" msprop:Generator_ColumnPropNameInTable="Butce_GiderColumn" msprop:Generator_UserColumnName="Butce_Gider" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Yil" msprop:Generator_ColumnVarNameInTable="columnYil" msprop:Generator_ColumnPropNameInRow="Yil" msprop:Generator_ColumnPropNameInTable="YilColumn" msprop:Generator_UserColumnName="Yil" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="tblSrmMrkzleri" msprop:Generator_TableClassName="tblSrmMrkzleriDataTable" msprop:Generator_TableVarName="tabletblSrmMrkzleri" msprop:Generator_TablePropName="tblSrmMrkzleri" msprop:Generator_RowDeletingName="tblSrmMrkzleriRowDeleting" msprop:Generator_RowChangingName="tblSrmMrkzleriRowChanging" msprop:Generator_RowEvHandlerName="tblSrmMrkzleriRowChangeEventHandler" msprop:Generator_RowDeletedName="tblSrmMrkzleriRowDeleted" msprop:Generator_UserTableName="tblSrmMrkzleri" msprop:Generator_RowChangedName="tblSrmMrkzleriRowChanged" msprop:Generator_RowEvArgName="tblSrmMrkzleriRowChangeEvent" msprop:Generator_RowClassName="tblSrmMrkzleriRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="som_isim" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnsom_isim" msprop:Generator_ColumnPropNameInRow="som_isim" msprop:Generator_ColumnPropNameInTable="som_isimColumn" msprop:Generator_UserColumnName="som_isim" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SomKod" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnSomKod" msprop:Generator_ColumnPropNameInRow="SomKod" msprop:Generator_ColumnPropNameInTable="SomKodColumn" msprop:Generator_UserColumnName="SomKod" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="69" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ButceAnalizRaporu" msprop:Generator_TableClassName="ButceAnalizRaporuDataTable" msprop:Generator_TableVarName="tableButceAnalizRaporu" msprop:Generator_RowChangedName="ButceAnalizRaporuRowChanged" msprop:Generator_TablePropName="ButceAnalizRaporu" msprop:Generator_RowDeletingName="ButceAnalizRaporuRowDeleting" msprop:Generator_RowChangingName="ButceAnalizRaporuRowChanging" msprop:Generator_RowEvHandlerName="ButceAnalizRaporuRowChangeEventHandler" msprop:Generator_RowDeletedName="ButceAnalizRaporuRowDeleted" msprop:Generator_RowClassName="ButceAnalizRaporuRow" msprop:Generator_UserTableName="ButceAnalizRaporu" msprop:Generator_RowEvArgName="ButceAnalizRaporuRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Bolge" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnBolge" msprop:Generator_ColumnPropNameInRow="Bolge" msprop:Generator_ColumnPropNameInTable="BolgeColumn" msprop:Generator_UserColumnName="Bolge" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1000" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SorumlulukMerkeziAdi" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnSorumlulukMerkeziAdi" msprop:Generator_ColumnPropNameInRow="SorumlulukMerkeziAdi" msprop:Generator_ColumnPropNameInTable="SorumlulukMerkeziAdiColumn" msprop:Generator_UserColumnName="SorumlulukMerkeziAdi" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1000" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Yil" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnYil" msprop:Generator_ColumnPropNameInRow="Yil" msprop:Generator_ColumnPropNameInTable="YilColumn" msprop:Generator_UserColumnName="Yil" type="xs:int" minOccurs="0" />
+              <xs:element name="BelirlenenButceGelir" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnBelirlenenButceGelir" msprop:Generator_ColumnPropNameInRow="BelirlenenButceGelir" msprop:Generator_ColumnPropNameInTable="BelirlenenButceGelirColumn" msprop:Generator_UserColumnName="BelirlenenButceGelir" type="xs:decimal" minOccurs="0" />
+              <xs:element name="ButcelenenGelir" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnButcelenenGelir" msprop:Generator_ColumnPropNameInRow="ButcelenenGelir" msprop:Generator_ColumnPropNameInTable="ButcelenenGelirColumn" msprop:Generator_UserColumnName="ButcelenenGelir" type="xs:decimal" minOccurs="0" />
+              <xs:element name="GerceklesenGelir" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnGerceklesenGelir" msprop:Generator_ColumnPropNameInRow="GerceklesenGelir" msprop:Generator_ColumnPropNameInTable="GerceklesenGelirColumn" msprop:Generator_UserColumnName="GerceklesenGelir" type="xs:decimal" minOccurs="0" />
+              <xs:element name="BelirlenenButceGider" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnBelirlenenButceGider" msprop:Generator_ColumnPropNameInRow="BelirlenenButceGider" msprop:Generator_ColumnPropNameInTable="BelirlenenButceGiderColumn" msprop:Generator_UserColumnName="BelirlenenButceGider" type="xs:decimal" minOccurs="0" />
+              <xs:element name="ButcelenenGider" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnButcelenenGider" msprop:Generator_ColumnPropNameInRow="ButcelenenGider" msprop:Generator_ColumnPropNameInTable="ButcelenenGiderColumn" msprop:Generator_UserColumnName="ButcelenenGider" type="xs:decimal" minOccurs="0" />
+              <xs:element name="GerceklesenGider" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnGerceklesenGider" msprop:Generator_ColumnPropNameInRow="GerceklesenGider" msprop:Generator_ColumnPropNameInTable="GerceklesenGiderColumn" msprop:Generator_UserColumnName="GerceklesenGider" type="xs:decimal" minOccurs="0" />
+              <xs:element name="ButcelenenGerceklesenGelir" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnButcelenenGerceklesenGelir" msprop:Generator_ColumnPropNameInRow="ButcelenenGerceklesenGelir" msprop:Generator_ColumnPropNameInTable="ButcelenenGerceklesenGelirColumn" msprop:Generator_UserColumnName="ButcelenenGerceklesenGelir" type="xs:decimal" minOccurs="0" />
+              <xs:element name="ButcelenenGerceklesenGider" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnButcelenenGerceklesenGider" msprop:Generator_ColumnPropNameInRow="ButcelenenGerceklesenGider" msprop:Generator_ColumnPropNameInTable="ButcelenenGerceklesenGiderColumn" msprop:Generator_UserColumnName="ButcelenenGerceklesenGider" type="xs:decimal" minOccurs="0" />
+              <xs:element name="YuzdeGelirSapmasi" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnYuzdeGelirSapmasi" msprop:Generator_ColumnPropNameInRow="YuzdeGelirSapmasi" msprop:Generator_ColumnPropNameInTable="YuzdeGelirSapmasiColumn" msprop:Generator_UserColumnName="YuzdeGelirSapmasi" type="xs:decimal" minOccurs="0" />
+              <xs:element name="YuzdeGiderSapmasi" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnYuzdeGiderSapmasi" msprop:Generator_ColumnPropNameInRow="YuzdeGiderSapmasi" msprop:Generator_ColumnPropNameInTable="YuzdeGiderSapmasiColumn" msprop:Generator_UserColumnName="YuzdeGiderSapmasi" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="tblButceRaporAnalizi" msprop:Generator_TableClassName="tblButceRaporAnaliziDataTable" msprop:Generator_TableVarName="tabletblButceRaporAnalizi" msprop:Generator_RowChangedName="tblButceRaporAnaliziRowChanged" msprop:Generator_TablePropName="tblButceRaporAnalizi" msprop:Generator_RowDeletingName="tblButceRaporAnaliziRowDeleting" msprop:Generator_RowChangingName="tblButceRaporAnaliziRowChanging" msprop:Generator_RowEvHandlerName="tblButceRaporAnaliziRowChangeEventHandler" msprop:Generator_RowDeletedName="tblButceRaporAnaliziRowDeleted" msprop:Generator_RowClassName="tblButceRaporAnaliziRow" msprop:Generator_UserTableName="tblButceRaporAnalizi" msprop:Generator_RowEvArgName="tblButceRaporAnaliziRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Bolge" msprop:Generator_ColumnVarNameInTable="columnBolge" msprop:Generator_ColumnPropNameInRow="Bolge" msprop:Generator_ColumnPropNameInTable="BolgeColumn" msprop:Generator_UserColumnName="Bolge" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="150" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ButcelenenGelir" msprop:Generator_ColumnVarNameInTable="columnButcelenenGelir" msprop:Generator_ColumnPropNameInRow="ButcelenenGelir" msprop:Generator_ColumnPropNameInTable="ButcelenenGelirColumn" msprop:Generator_UserColumnName="ButcelenenGelir" type="xs:decimal" minOccurs="0" />
+              <xs:element name="GerceklesenGelir" msprop:Generator_ColumnVarNameInTable="columnGerceklesenGelir" msprop:Generator_ColumnPropNameInRow="GerceklesenGelir" msprop:Generator_ColumnPropNameInTable="GerceklesenGelirColumn" msprop:Generator_UserColumnName="GerceklesenGelir" type="xs:decimal" minOccurs="0" />
+              <xs:element name="ButcelenenGider" msprop:Generator_ColumnVarNameInTable="columnButcelenenGider" msprop:Generator_ColumnPropNameInRow="ButcelenenGider" msprop:Generator_ColumnPropNameInTable="ButcelenenGiderColumn" msprop:Generator_UserColumnName="ButcelenenGider" type="xs:decimal" minOccurs="0" />
+              <xs:element name="GerceklesenGider" msprop:Generator_ColumnVarNameInTable="columnGerceklesenGider" msprop:Generator_ColumnPropNameInRow="GerceklesenGider" msprop:Generator_ColumnPropNameInTable="GerceklesenGiderColumn" msprop:Generator_UserColumnName="GerceklesenGider" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:tblButce" />
+      <xs:field xpath="mstns:ButceID" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

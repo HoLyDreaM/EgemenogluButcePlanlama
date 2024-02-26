@@ -1,0 +1,673 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{DBE37ACE-D42F-4703-AC39-E49C767E67B4}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EgemenOgluRaporlama</RootNamespace>
+    <AssemblyName>EgemenOgluRaporlama</AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>
+    </ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup />
+  <PropertyGroup />
+  <ItemGroup>
+    <Reference Include="DevExpress.BonusSkins.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Charts.v17.1.Core, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Data.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.ExpressApp.PivotGrid.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.ExpressApp.PivotGrid.Win.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.ExpressApp.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.ExpressApp.Win.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Persistent.Base.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.PivotGrid.v17.1.Core, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Pdf.v17.1.Core, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v17.1.Export, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v17.1.Core, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Office.v17.1.Core, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.RichEdit.v17.1.Core, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpo.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraBars.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v17.1.Wizard, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraCharts.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraCharts.v17.1.UI, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraEditors.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraNavBar.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPivotGrid.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraRichEdit.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraScheduler.v17.1.Reporting.Extensions, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraScheduler.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraScheduler.v17.1.Core, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraTreeList.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraVerticalGrid.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.SqlServerCe, Version=3.5.1.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AnaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AnaForm.Designer.cs">
+      <DependentUpon>AnaForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ayarlar\DonemTanimlari.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ayarlar\DonemTanimlari.Designer.cs">
+      <DependentUpon>DonemTanimlari.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ayarlar\GrupTanimlari.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ayarlar\GrupTanimlari.Designer.cs">
+      <DependentUpon>GrupTanimlari.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ayarlar\guncelleme.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ayarlar\guncelleme.Designer.cs">
+      <DependentUpon>guncelleme.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ayarlar\KullaniciTanimlariFormu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ayarlar\KullaniciTanimlariFormu.Designer.cs">
+      <DependentUpon>KullaniciTanimlariFormu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ayarlar\lookUpBilancoFirmaSec.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ayarlar\lookUpBilancoFirmaSec.Designer.cs">
+      <DependentUpon>lookUpBilancoFirmaSec.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ayarlar\lookUpDepartman.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ayarlar\lookUpDepartman.Designer.cs">
+      <DependentUpon>lookUpDepartman.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ayarlar\lookUpGTFirmaSec.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ayarlar\lookUpGTFirmaSec.Designer.cs">
+      <DependentUpon>lookUpGTFirmaSec.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ayarlar\lookUpIller.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ayarlar\lookUpIller.Designer.cs">
+      <DependentUpon>lookUpIller.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ayarlar\lookUpKullanici.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ayarlar\lookUpKullanici.Designer.cs">
+      <DependentUpon>lookUpKullanici.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ayarlar\lookUpSirket.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ayarlar\lookUpSirket.Designer.cs">
+      <DependentUpon>lookUpSirket.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ayarlar\lookUpSorumlulukMerkezleri.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ayarlar\lookUpSorumlulukMerkezleri.Designer.cs">
+      <DependentUpon>lookUpSorumlulukMerkezleri.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ayarlar\lookUpSqlServer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ayarlar\lookUpSqlServer.Designer.cs">
+      <DependentUpon>lookUpSqlServer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ayarlar\PersoneleGrupAtama.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ayarlar\PersoneleGrupAtama.Designer.cs">
+      <DependentUpon>PersoneleGrupAtama.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ayarlar\prim_PrimMusterilerIcinAySayilari.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ayarlar\prim_PrimMusterilerIcinAySayilari.Designer.cs">
+      <DependentUpon>prim_PrimMusterilerIcinAySayilari.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ayarlar\TahsilatSureleri.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ayarlar\TahsilatSureleri.Designer.cs">
+      <DependentUpon>TahsilatSureleri.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BankaHareketleriFormu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BankaHareketleriFormu.Designer.cs">
+      <DependentUpon>BankaHareketleriFormu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Butce\ButceAnalizi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Butce\ButceAnalizi.Designer.cs">
+      <DependentUpon>ButceAnalizi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Butce\ButceChartKontrol.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Butce\ButceChartKontrol.Designer.cs">
+      <DependentUpon>ButceChartKontrol.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Butce\ButceModulu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Butce\ButceModulu.Designer.cs">
+      <DependentUpon>ButceModulu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="dsYeniRaporlar.cs">
+      <DependentUpon>dsYeniRaporlar.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsYeniRaporlar.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsYeniRaporlar.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="PrimSistemi\bg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrimSistemi\bg.Designer.cs">
+      <DependentUpon>bg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bilanco.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bilanco.Designer.cs">
+      <DependentUpon>Bilanco.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CekSenet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CekSenet.Designer.cs">
+      <DependentUpon>CekSenet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DSRaporlama.cs">
+      <DependentUpon>DSRaporlama.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DSRaporlama.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSRaporlama.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="InsanKaynaklari\aylikGirisCikis.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InsanKaynaklari\aylikGirisCikis.Designer.cs">
+      <DependentUpon>aylikGirisCikis.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InsanKaynaklari\degisiklikYapilanlar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InsanKaynaklari\degisiklikYapilanlar.Designer.cs">
+      <DependentUpon>degisiklikYapilanlar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InsanKaynaklari\gunlukGiris.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InsanKaynaklari\gunlukGiris.Designer.cs">
+      <DependentUpon>gunlukGiris.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InsanKaynaklari\gunlukGirisCikis.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InsanKaynaklari\gunlukGirisCikis.Designer.cs">
+      <DependentUpon>gunlukGirisCikis.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InsanKaynaklari\gunlukGirisDuzenleme.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InsanKaynaklari\gunlukGirisDuzenleme.Designer.cs">
+      <DependentUpon>gunlukGirisDuzenleme.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InsanKaynaklari\haftalikGirisCikis.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InsanKaynaklari\haftalikGirisCikis.Designer.cs">
+      <DependentUpon>haftalikGirisCikis.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InsanKaynaklari\tariheGore.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InsanKaynaklari\tariheGore.Designer.cs">
+      <DependentUpon>tariheGore.cs</DependentUpon>
+    </Compile>
+    <Compile Include="muvekkilAlacaklari.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="muvekkilAlacaklari.Designer.cs">
+      <DependentUpon>muvekkilAlacaklari.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GelirTablosu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GelirTablosu.Designer.cs">
+      <DependentUpon>GelirTablosu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GiderlerFormu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GiderlerFormu.Designer.cs">
+      <DependentUpon>GiderlerFormu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GirisFormu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GirisFormu.Designer.cs">
+      <DependentUpon>GirisFormu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="iniOku.cs" />
+    <Compile Include="KasaHarekleriFormu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KasaHarekleriFormu.Designer.cs">
+      <DependentUpon>KasaHarekleriFormu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="muvekkilMasraflari.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="muvekkilMasraflari.Designer.cs">
+      <DependentUpon>muvekkilMasraflari.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kurlar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kurlar.Designer.cs">
+      <DependentUpon>Kurlar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LikiditeFormu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LikiditeFormu.Designer.cs">
+      <DependentUpon>LikiditeFormu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MuvekkilUcretleriFormu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MuvekkilUcretleriFormu.Designer.cs">
+      <DependentUpon>MuvekkilUcretleriFormu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PersonelAvanslariFormu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PersonelAvanslariFormu.Designer.cs">
+      <DependentUpon>PersonelAvanslariFormu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PrimSistemi\IsHareketleri.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrimSistemi\IsHareketleri.Designer.cs">
+      <DependentUpon>IsHareketleri.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PrimSistemi\PiramitHareketleri.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrimSistemi\PiramitHareketleri.Designer.cs">
+      <DependentUpon>PiramitHareketleri.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PrimSistemi\PrimGiris.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrimSistemi\PrimGiris.Designer.cs">
+      <DependentUpon>PrimGiris.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PrimSistemi\PrimHesapla.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrimSistemi\PrimHesapla.Designer.cs">
+      <DependentUpon>PrimHesapla.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PrimSistemi\Rapor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrimSistemi\Rapor.Designer.cs">
+      <DependentUpon>Rapor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PrimSistemi\Rapor1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrimSistemi\Rapor1.Designer.cs">
+      <DependentUpon>Rapor1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PrimSistemi\YeniIsEkle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrimSistemi\YeniIsEkle.Designer.cs">
+      <DependentUpon>YeniIsEkle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PrimSistemi\YeniMusteri.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrimSistemi\YeniMusteri.Designer.cs">
+      <DependentUpon>YeniMusteri.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sifrele.cs" />
+    <EmbeddedResource Include="AnaForm.resx">
+      <DependentUpon>AnaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ayarlar\DonemTanimlari.resx">
+      <DependentUpon>DonemTanimlari.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ayarlar\GrupTanimlari.resx">
+      <DependentUpon>GrupTanimlari.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ayarlar\guncelleme.resx">
+      <DependentUpon>guncelleme.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ayarlar\KullaniciTanimlariFormu.resx">
+      <DependentUpon>KullaniciTanimlariFormu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ayarlar\lookUpBilancoFirmaSec.resx">
+      <DependentUpon>lookUpBilancoFirmaSec.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ayarlar\lookUpDepartman.resx">
+      <DependentUpon>lookUpDepartman.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ayarlar\lookUpGTFirmaSec.resx">
+      <DependentUpon>lookUpGTFirmaSec.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ayarlar\lookUpIller.resx">
+      <DependentUpon>lookUpIller.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ayarlar\lookUpKullanici.resx">
+      <DependentUpon>lookUpKullanici.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ayarlar\lookUpSirket.resx">
+      <DependentUpon>lookUpSirket.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ayarlar\lookUpSorumlulukMerkezleri.resx">
+      <DependentUpon>lookUpSorumlulukMerkezleri.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ayarlar\lookUpSqlServer.resx">
+      <DependentUpon>lookUpSqlServer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ayarlar\PersoneleGrupAtama.resx">
+      <DependentUpon>PersoneleGrupAtama.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ayarlar\prim_PrimMusterilerIcinAySayilari.resx">
+      <DependentUpon>prim_PrimMusterilerIcinAySayilari.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ayarlar\TahsilatSureleri.resx">
+      <DependentUpon>TahsilatSureleri.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BankaHareketleriFormu.resx">
+      <DependentUpon>BankaHareketleriFormu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Butce\ButceAnalizi.resx">
+      <DependentUpon>ButceAnalizi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Butce\ButceChartKontrol.resx">
+      <DependentUpon>ButceChartKontrol.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Butce\ButceModulu.resx">
+      <DependentUpon>ButceModulu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrimSistemi\bg.resx">
+      <DependentUpon>bg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bilanco.resx">
+      <DependentUpon>Bilanco.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CekSenet.resx">
+      <DependentUpon>CekSenet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InsanKaynaklari\aylikGirisCikis.resx">
+      <DependentUpon>aylikGirisCikis.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InsanKaynaklari\degisiklikYapilanlar.resx">
+      <DependentUpon>degisiklikYapilanlar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InsanKaynaklari\gunlukGiris.resx">
+      <DependentUpon>gunlukGiris.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InsanKaynaklari\gunlukGirisCikis.resx">
+      <DependentUpon>gunlukGirisCikis.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InsanKaynaklari\gunlukGirisDuzenleme.resx">
+      <DependentUpon>gunlukGirisDuzenleme.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InsanKaynaklari\haftalikGirisCikis.resx">
+      <DependentUpon>haftalikGirisCikis.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InsanKaynaklari\tariheGore.resx">
+      <DependentUpon>tariheGore.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="muvekkilAlacaklari.resx">
+      <DependentUpon>muvekkilAlacaklari.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GelirTablosu.resx">
+      <DependentUpon>GelirTablosu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GiderlerFormu.resx">
+      <DependentUpon>GiderlerFormu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GirisFormu.resx">
+      <DependentUpon>GirisFormu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KasaHarekleriFormu.resx">
+      <DependentUpon>KasaHarekleriFormu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="muvekkilMasraflari.resx">
+      <DependentUpon>muvekkilMasraflari.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Kurlar.resx">
+      <DependentUpon>Kurlar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LikiditeFormu.resx">
+      <DependentUpon>LikiditeFormu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MuvekkilUcretleriFormu.resx">
+      <DependentUpon>MuvekkilUcretleriFormu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PersonelAvanslariFormu.resx">
+      <DependentUpon>PersonelAvanslariFormu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrimSistemi\IsHareketleri.resx">
+      <DependentUpon>IsHareketleri.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrimSistemi\PiramitHareketleri.resx">
+      <DependentUpon>PiramitHareketleri.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrimSistemi\PrimGiris.resx">
+      <DependentUpon>PrimGiris.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrimSistemi\PrimHesapla.resx">
+      <DependentUpon>PrimHesapla.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrimSistemi\Rapor.resx">
+      <DependentUpon>Rapor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrimSistemi\Rapor1.resx">
+      <DependentUpon>Rapor1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrimSistemi\YeniIsEkle.resx">
+      <DependentUpon>YeniIsEkle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrimSistemi\YeniMusteri.resx">
+      <DependentUpon>YeniMusteri.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="app.config" />
+    <None Include="DSRaporlama.xsc">
+      <DependentUpon>DSRaporlama.xsd</DependentUpon>
+    </None>
+    <None Include="DSRaporlama.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSRaporlama.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DSRaporlama.xss">
+      <DependentUpon>DSRaporlama.xsd</DependentUpon>
+    </None>
+    <None Include="dsYeniRaporlar.xsc">
+      <DependentUpon>dsYeniRaporlar.xsd</DependentUpon>
+    </None>
+    <None Include="dsYeniRaporlar.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsYeniRaporlar.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="dsYeniRaporlar.xss">
+      <DependentUpon>dsYeniRaporlar.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0,Profile=Client">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 Client Profile %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.SQL.Server.Compact.3.5">
+      <Visible>False</Visible>
+      <ProductName>SQL Server Compact 3.5 SP2</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\16x16\1357141503_to_do_list_cheked_all.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\16x16\1357141513_to_do_list.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ico.ico" />
+    <None Include="Images\24x24\Printer.png" />
+    <None Include="Resources\printers.png" />
+    <None Include="Images\24x24\Butce.png" />
+    <None Include="Images\48X48\indir.png" />
+    <None Include="Images\48X48\Yenile.png" />
+    <None Include="Images\bg.png" />
+    <None Include="Images\yeni_logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="SQLDMO">
+      <Guid>{10010001-E260-11CF-AE68-00AA004A34D5}</Guid>
+      <VersionMajor>8</VersionMajor>
+      <VersionMinor>5</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
